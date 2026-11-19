@@ -1,20 +1,22 @@
+import type { WebsitePage } from '../App';
 import { CORPORATE_PROFILE, type LegalDocument } from '../data/corporateData';
 
 interface FooterProps {
+  onNavigate: (page: WebsitePage) => void;
   onOpenLegal: (id: LegalDocument['id']) => void;
 }
 
-export default function Footer({ onOpenLegal }: FooterProps) {
+export default function Footer({ onNavigate, onOpenLegal }: FooterProps) {
   return (
     <footer className="bg-[#060A13] pt-12 pb-10 text-sm text-slate-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 border-b border-slate-800/80 pb-10 md:grid-cols-12">
           <div className="space-y-2.5 md:col-span-5">
             <div className="text-base font-bold text-white">
-              UNIFIED MULTI CONCEPT <span className="text-emerald-400">LTD</span>
+              UNIFIED MULTICONCEPTS <span className="text-emerald-400">LTD</span>
             </div>
             <p className="font-mono text-xs text-emerald-400">
-              {CORPORATE_PROFILE.rcNumber} · Incorporated {CORPORATE_PROFILE.incorporatedDate}
+              {CORPORATE_PROFILE.rcNumber} · {CORPORATE_PROFILE.domain}
             </p>
             <p className="text-xs leading-relaxed text-slate-400">
               Enterprise software engineering, software-defined AI compute virtualization, and
@@ -29,27 +31,48 @@ export default function Footer({ onOpenLegal }: FooterProps) {
 
           <div className="space-y-2.5 md:col-span-4">
             <div className="font-mono text-xs font-semibold text-slate-200">
-              Platform &amp; Compliance
+              Website Pages &amp; Infrastructure
             </div>
             <ul className="space-y-2 text-xs">
               <li>
-                <a href="#solutions" className="hover:text-emerald-400 transition-colors">
-                  AI Compute &amp; 774-LGA Infrastructure
-                </a>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('solutions')}
+                  className="text-left hover:text-emerald-400 transition-colors"
+                >
+                  AI Compute &amp; 774-LGA Solutions
+                </button>
               </li>
               <li>
-                <a href="#software-dev" className="hover:text-emerald-400 transition-colors">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('developers')}
+                  className="text-left hover:text-emerald-400 transition-colors"
+                >
                   Developer API &amp; Split-Settlement Sandbox
-                </a>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('compliance')}
+                  className="text-left hover:text-emerald-400 transition-colors"
+                >
+                  CAC, KYB &amp; Settlement Accounts
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onNavigate('contact')}
+                  className="text-left hover:text-emerald-400 transition-colors"
+                >
+                  Enterprise Onboarding &amp; Contact
+                </button>
               </li>
               <li>
                 <a href="./mail.html" className="hover:text-emerald-400 transition-colors">
                   Corporate Mail Infrastructure (Separate Console)
-                </a>
-              </li>
-              <li>
-                <a href="#compliance" className="hover:text-emerald-400 transition-colors">
-                  CAC, KYB &amp; Settlement Accounts
                 </a>
               </li>
             </ul>
@@ -57,7 +80,7 @@ export default function Footer({ onOpenLegal }: FooterProps) {
 
           <div className="space-y-2.5 md:col-span-3">
             <div className="font-mono text-xs font-semibold text-slate-200">
-              Governance &amp; Legal
+              Governance &amp; Business Mail
             </div>
             <ul className="space-y-2 text-xs">
               <li>
@@ -86,6 +109,14 @@ export default function Footer({ onOpenLegal }: FooterProps) {
                 >
                   Infrastructure Uptime &amp; API SLA
                 </button>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${CORPORATE_PROFILE.infoEmail}`}
+                  className="font-mono hover:text-emerald-400 transition-colors"
+                >
+                  {CORPORATE_PROFILE.infoEmail}
+                </a>
               </li>
               <li>
                 <a

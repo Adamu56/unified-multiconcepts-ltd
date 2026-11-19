@@ -68,7 +68,7 @@ export default function ApiSandboxSection() {
               Interactive API &amp; Split-Settlement Orchestrator
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-400 sm:text-base">
-              Inspect how Unified Multi Concept Ltd orchestrates{' '}
+              Inspect how UNIFIED MULTICONCEPTS LTD orchestrates{' '}
               <strong className="text-slate-200">Mono Prove &amp; CAC KYB</strong>,{' '}
               <strong className="text-slate-200">Flutterwave Virtual Account Splits</strong>, and{' '}
               <strong className="text-slate-200">Metered AI Compute Gateways</strong>.
@@ -77,7 +77,7 @@ export default function ApiSandboxSection() {
 
           <div className="self-start rounded-xl border border-slate-800 bg-[#0E1525] px-3.5 py-2 font-mono text-xs text-slate-400 lg:self-auto">
             Base URL:{' '}
-            <span className="text-emerald-400">https://api.unifiedmulticoncept.ng/v1</span>
+            <span className="text-emerald-400">https://api.unifiedmulticonceptsltd.com/v1</span>
           </div>
         </div>
 
@@ -220,7 +220,7 @@ export default function ApiSandboxSection() {
 
             <p className="text-xs leading-relaxed text-slate-400">
               Funds settle directly from Flutterwave&apos;s CBN-licensed escrow infrastructure into
-              each verified subaccount—Unified Multi Concept Ltd never holds customer deposits.
+              each verified subaccount—UNIFIED MULTICONCEPTS LTD never holds customer deposits.
             </p>
           </div>
 

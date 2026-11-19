@@ -40,7 +40,7 @@ export default function MailApp() {
             href="./mail.html"
             className="whitespace-nowrap shrink-0 rounded-md text-sm font-bold tracking-tight text-white sm:text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           >
-            UNIFIED MULTI CONCEPT <span className="text-emerald-400">MAIL</span>
+            UNIFIED MULTICONCEPTS <span className="text-emerald-400">MAIL</span>
           </a>
 
           <nav
@@ -114,9 +114,9 @@ export default function MailApp() {
             <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-slate-400">
               <span className="font-semibold text-emerald-400">{CORPORATE_PROFILE.rcNumber}</span>
               <span aria-hidden="true">·</span>
-              <span>Standalone Email Infrastructure</span>
+              <span>{CORPORATE_PROFILE.domain}</span>
               <span aria-hidden="true">·</span>
-              <span>Zero-Domain GitHub Pages Ready</span>
+              <span>Standalone Email Infrastructure</span>
             </div>
 
             <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
@@ -127,18 +127,21 @@ export default function MailApp() {
                 <p className="max-w-2xl text-base leading-relaxed text-slate-300">
                   Dedicated institutional correspondence workbench for{' '}
                   <strong className="text-white">{CORPORATE_PROFILE.legalName}</strong>. Draft
-                  CAC-signed KYB disclosures, 774-LGA project proposals, and settlement notices
-                  separately from the main corporate website.
+                  CAC-signed KYB disclosures, 774-LGA project proposals, and settlement notices using{' '}
+                  <span className="font-mono text-emerald-400">
+                    @{CORPORATE_PROFILE.domain}
+                  </span>{' '}
+                  corporate mailboxes.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-slate-800 bg-[#0E1525] p-5 space-y-3 lg:col-span-5">
                 <div className="border-b border-slate-800 pb-2.5 font-mono text-xs font-semibold text-emerald-400">
-                  Verified Dispatch Mailboxes &amp; Sign-Off Lines
+                  Corporate Domain Mailboxes &amp; Sign-Off Lines
                 </div>
                 <div className="space-y-2 text-xs">
                   <div className="flex items-center justify-between gap-2 rounded-xl border border-slate-800 bg-[#080D18] px-3.5 py-2.5">
-                    <span className="text-slate-400">Primary Desk</span>
+                    <span className="text-slate-400">Compliance Desk</span>
                     <span className="font-mono text-emerald-400">
                       {CORPORATE_PROFILE.primaryEmail}
                     </span>
@@ -147,6 +150,12 @@ export default function MailApp() {
                     <span className="text-slate-400">Operations Desk</span>
                     <span className="font-mono text-blue-400">
                       {CORPORATE_PROFILE.operationsEmail}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2 rounded-xl border border-slate-800 bg-[#080D18] px-3.5 py-2.5">
+                    <span className="text-slate-400">Engineering / Info</span>
+                    <span className="font-mono text-slate-200">
+                      {CORPORATE_PROFILE.engineeringEmail}
                     </span>
                   </div>
                   <div className="flex items-center justify-between gap-2 rounded-xl border border-slate-800 bg-[#080D18] px-3.5 py-2.5">
@@ -248,13 +257,15 @@ export default function MailApp() {
             >
               <div className="mb-6 max-w-3xl">
                 <div className="mb-1.5 font-mono text-xs font-semibold text-blue-400">
-                  Zero-Domain Hosting
+                  Domain &amp; DNS Configuration
                 </div>
                 <h2 className="text-xl font-bold text-white sm:text-2xl">
-                  GitHub Pages Static Deployment Architecture
+                  Professional Domain &amp; GitHub Pages Hosting Architecture
                 </h2>
                 <p className="mt-2 text-sm text-slate-300">
-                  This mail console builds to a standalone static entry (<span className="font-mono text-emerald-400">mail.html</span>) alongside the main corporate website (<span className="font-mono text-emerald-400">index.html</span>).
+                  Hosted at <span className="font-mono text-emerald-400">{CORPORATE_PROFILE.websiteUrl}mail.html</span>{' '}
+                  and ready for custom domain binding on{' '}
+                  <span className="font-mono text-blue-400">{CORPORATE_PROFILE.domain}</span>.
                 </p>
               </div>
 

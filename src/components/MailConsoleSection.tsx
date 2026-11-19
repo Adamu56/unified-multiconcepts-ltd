@@ -1,6 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Check, Copy, ExternalLink, Mail } from 'lucide-react';
-import { CORPORATE_PROFILE, MAIL_PRESETS, type MailPreset } from '../data/corporateData';
+import {
+  CORPORATE_MAILBOXES,
+  CORPORATE_PROFILE,
+  MAIL_PRESETS,
+  type MailPreset,
+} from '../data/corporateData';
 import { copyToClipboard } from '../utils/clipboard';
 
 export default function MailConsoleSection() {
@@ -21,10 +26,10 @@ export default function MailConsoleSection() {
   };
 
   const fullFormattedBody = useMemo(() => {
-    let signature = `\n\nBest regards,\n\n${CORPORATE_PROFILE.legalName} (${CORPORATE_PROFILE.rcNumber})\nIncorporated: ${CORPORATE_PROFILE.incorporatedDate}\nHQ: ${CORPORATE_PROFILE.abujaHq}\nRegional Hub: ${CORPORATE_PROFILE.potiskumHub}\nEmail: ${senderMailbox} | Tel: ${senderPhone}`;
+    let signature = `\n\nBest regards,\n\n${CORPORATE_PROFILE.legalName} (${CORPORATE_PROFILE.rcNumber})\nWeb: https://${CORPORATE_PROFILE.domain}\nIncorporated: ${CORPORATE_PROFILE.incorporatedDate}\nHQ: ${CORPORATE_PROFILE.abujaHq}\nRegional Hub: ${CORPORATE_PROFILE.potiskumHub}\nEmail: ${senderMailbox} | Tel: ${senderPhone}`;
 
     if (includeBankFooter) {
-      signature += `\nSettlement Bank (GTBank): 0766139326 (${CORPORATE_PROFILE.legalName})\nWema Virtual Accounts: 8548944294, 8548944295, 8548944296, 8548944297`;
+      signature += `\nSettlement Bank (GTBank): 0766139326 (${CORPORATE_PROFILE.accountHolderName})\nWema Virtual Accounts: 8548944294, 8548944295, 8548944296, 8548944297`;
     }
 
     return body.trimEnd() + signature;
@@ -68,7 +73,7 @@ export default function MailConsoleSection() {
         <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-3xl">
             <div className="mb-2 text-xs font-mono font-semibold text-emerald-400">
-              Interactive Corporate Mail Workbench · No Custom Domain Required
+              Corporate Mail Workbench · {CORPORATE_PROFILE.domain}
             </div>
             <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-4xl [text-wrap:balance]">
               Corporate Email Composer &amp; Official Sign-Off Builder
@@ -83,16 +88,17 @@ export default function MailConsoleSection() {
           </div>
         </div>
 
-        {/* Zero-Domain GitHub Pages Explanation */}
+        {/* Business Domain Mail Routing Explanation */}
         <div className="mb-8 rounded-2xl border border-slate-800 bg-[#0E1525] p-4 sm:p-5">
           <p className="text-xs leading-relaxed text-slate-300 sm:text-sm">
-            <strong className="text-white">How Zero-Domain Corporate Mail Works:</strong> Static
-            hosting such as GitHub Pages (<span className="font-mono text-blue-400">*.github.io</span>)
-            cannot run an unauthenticated raw SMTP server directly in the browser. This console
-            generates CAC-signed corporate email headers and disclosures, launches your default mail
-            app (<span className="font-mono text-emerald-400">mailto:</span>) or Gmail Web Compose
-            in one click, and formats copy-ready dispatches routed via{' '}
-            <span className="font-mono text-emerald-400">{CORPORATE_PROFILE.primaryEmail}</span>.
+            <strong className="text-white">Corporate Domain Email Architecture:</strong> All
+            outgoing templates use official{' '}
+            <span className="font-mono text-emerald-400">@{CORPORATE_PROFILE.domain}</span>{' '}
+            desks. To receive replies directly at these addresses, point MX, SPF, DKIM, and DMARC
+            DNS records on <span className="font-mono text-blue-400">{CORPORATE_PROFILE.domain}</span>{' '}
+            to Google Workspace, Zoho Mail, or Microsoft 365 while this workbench launches your
+            authenticated mail client (<span className="font-mono text-emerald-400">mailto:</span>)
+            or Gmail Web Compose.
           </p>
         </div>
 
@@ -138,12 +144,11 @@ export default function MailConsoleSection() {
                   onChange={(e) => setSenderMailbox(e.target.value)}
                   className="w-full rounded-xl border border-slate-700 bg-[#080D18] px-3.5 py-2.5 font-mono text-xs text-emerald-400 focus:border-emerald-500 focus:outline-none sm:text-sm"
                 >
-                  <option value={CORPORATE_PROFILE.primaryEmail}>
-                    {CORPORATE_PROFILE.primaryEmail} (Primary Desk)
-                  </option>
-                  <option value={CORPORATE_PROFILE.operationsEmail}>
-                    {CORPORATE_PROFILE.operationsEmail} (Operations Desk)
-                  </option>
+                  {CORPORATE_MAILBOXES.map((box) => (
+                    <option key={box.address} value={box.address}>
+                      {box.address} ({box.label})
+                    </option>
+                  ))}
                 </select>
               </div>
 

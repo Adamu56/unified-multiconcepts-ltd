@@ -30,19 +30,44 @@ export interface LegalDocument {
 }
 
 export const CORPORATE_PROFILE = {
-  legalName: 'UNIFIED MULTI CONCEPT LTD',
+  legalName: 'UNIFIED MULTICONCEPTS LTD',
+  accountHolderName: 'UNIFIED MULTI CONCEPT LTD',
+  domain: 'unifiedmulticonceptsltd.com',
+  websiteUrl: 'https://adamu56.github.io/unified-multiconcepts-ltd/',
+  apiBaseUrl: 'https://api.unifiedmulticonceptsltd.com/v1',
   rcNumber: 'RC 6881592',
   incorporatedDate: 'February 20, 2023',
   abujaHq: 'No. 33, 64 Crescent, Gwarimpa 2, Abuja, FCT, Nigeria',
   potiskumHub: 'Sabon Layi, T-Junction, Potiskum, Yobe State, Nigeria',
-  primaryEmail: 'adamumadu56@gmail.com',
-  operationsEmail: 'ADAMUMADU74@GMAIL.COM',
+  primaryEmail: 'compliance@unifiedmulticonceptsltd.com',
+  operationsEmail: 'operations@unifiedmulticonceptsltd.com',
+  engineeringEmail: 'engineering@unifiedmulticonceptsltd.com',
+  infoEmail: 'info@unifiedmulticonceptsltd.com',
   primaryPhone: '+234 702 569 2917',
   secondaryPhone: '+234 902 569 2917',
   settlementBank: 'Guaranty Trust Bank (GTBank Corporate)',
   classification:
     'Information Technology, Enterprise Software Development, AI Compute Virtualization & Digital Infrastructure Services',
 };
+
+export const CORPORATE_MAILBOXES = [
+  {
+    address: 'compliance@unifiedmulticonceptsltd.com',
+    label: 'Compliance & KYB Desk',
+  },
+  {
+    address: 'operations@unifiedmulticonceptsltd.com',
+    label: 'Operations & 774-LGA Desk',
+  },
+  {
+    address: 'engineering@unifiedmulticonceptsltd.com',
+    label: 'Engineering & API Desk',
+  },
+  {
+    address: 'info@unifiedmulticonceptsltd.com',
+    label: 'Executive & General Inquiries',
+  },
+];
 
 export const BANK_ACCOUNTS: BankAccountRecord[] = [
   {
@@ -128,11 +153,12 @@ export const MAIL_PRESETS: MailPreset[] = [
   {
     id: 'kyb',
     label: 'KYB & Banking Verification Notice',
-    subject: 'KYB & Corporate Settlement Verification — UNIFIED MULTI CONCEPT LTD (RC 6881592)',
+    subject: 'KYB & Corporate Settlement Verification — UNIFIED MULTICONCEPTS LTD (RC 6881592)',
     body: `Dear Compliance & Partner Onboarding Team,
 
-Please find the verified corporate details for UNIFIED MULTI CONCEPT LTD (CAC Registration No. RC 6881592, incorporated February 20, 2023):
+Please find the verified corporate details for UNIFIED MULTICONCEPTS LTD (CAC Registration No. RC 6881592, incorporated February 20, 2023):
 
+- Corporate Domain: unifiedmulticonceptsltd.com
 - Registered Head Office: No. 33, 64 Crescent, Gwarimpa 2, Abuja, FCT, Nigeria
 - Regional Operations Base: Sabon Layi, T-Junction, Potiskum, Yobe State, Nigeria
 - Primary Settlement Account: GTBank — 0766139326 (UNIFIED MULTI CONCEPT LTD)
@@ -143,10 +169,10 @@ Our company operates as an enterprise software, AI compute virtualization, and d
   {
     id: 'lga',
     label: '774-LGA Digital School / Enterprise Proposal',
-    subject: '774-LGA Digital School & Enterprise Infrastructure Proposal — UNIFIED MULTI CONCEPT LTD',
+    subject: '774-LGA Digital School & Enterprise Infrastructure Proposal — UNIFIED MULTICONCEPTS LTD',
     body: `Dear Institutional / LGA Project Lead,
 
-UNIFIED MULTI CONCEPT LTD (RC 6881592) proposes a modular digital operating system and automated payment reconciliation framework designed for schools, enterprise clusters, and grassroots institutions across Nigeria's 774 LGAs.
+UNIFIED MULTICONCEPTS LTD (RC 6881592) proposes a modular digital operating system and automated payment reconciliation framework designed for schools, enterprise clusters, and grassroots institutions across Nigeria's 774 LGAs.
 
 Our platform supports dedicated virtual account collection, multi-party split settlements, and real-time operational reporting from our Abuja and Potiskum hubs.
 
@@ -155,12 +181,12 @@ We welcome the opportunity to schedule a technical walkthrough at your convenien
   {
     id: 'settlement',
     label: 'Settlement & Virtual Account Confirmation',
-    subject: 'Corporate Settlement & Virtual Account Reference — UNIFIED MULTI CONCEPT LTD',
+    subject: 'Corporate Settlement & Virtual Account Reference — UNIFIED MULTICONCEPTS LTD',
     body: `Dear Finance & Reconciliation Desk,
 
-All approved corporate settlements and scheduled disbursements for UNIFIED MULTI CONCEPT LTD (RC 6881592) are routed to our verified accounts below:
+All approved corporate settlements and scheduled disbursements for UNIFIED MULTICONCEPTS LTD (RC 6881592) are routed to our verified accounts below:
 
-- GTBank Primary Corporate Account: 0766139326
+- GTBank Primary Corporate Account: 0766139326 (UNIFIED MULTI CONCEPT LTD)
 - Wema Bank Virtual Accounts: 8548944294 / 8548944295 / 8548944296 / 8548944297
 
 Please quote your transaction/invoice reference upon remittance so our accounts desk can confirm receipt promptly.`,
@@ -171,7 +197,7 @@ Please quote your transaction/invoice reference upon remittance so our accounts 
     subject: 'Technical Integration: Mono KYB, Flutterwave Split Rails & AI Compute Gateway',
     body: `Dear Engineering & Integration Team,
 
-We are sharing our technical integration overview for UNIFIED MULTI CONCEPT LTD (RC 6881592) covering:
+We are sharing our technical integration overview for UNIFIED MULTICONCEPTS LTD (RC 6881592) covering:
 
 1. Automated KYB/KYC & live CAC lookup workflows via Mono APIs
 2. Non-custodial payment collection and split settlements via Flutterwave
@@ -189,7 +215,7 @@ export const API_SANDBOX_PRESETS: ApiSandboxPreset[] = [
     endpoint: '/v1/orchestration/kyb/verify-institution',
     languageLabel: 'Node.js / REST JSON',
     code: `// Orchestrate Mono Prove Custom KYC + Live CAC Status Report Lookup
-const response = await fetch("https://api.unifiedmulticoncept.ng/v1/orchestration/kyb/verify-institution", {
+const response = await fetch("https://api.unifiedmulticonceptsltd.com/v1/orchestration/kyb/verify-institution", {
   method: "POST",
   headers: {
     "Authorization": "Bearer umc_live_sec_98a71f4e22b0",
@@ -207,7 +233,7 @@ const response = await fetch("https://api.unifiedmulticoncept.ng/v1/orchestratio
 });`,
     output: `{
   "status": "success",
-  "orchestrator": "UNIFIED MULTI CONCEPT LTD (RC 6881592)",
+  "orchestrator": "UNIFIED MULTICONCEPTS LTD (RC 6881592)",
   "verification_id": "umc_ver_9948210ab",
   "mono_cac_lookup": {
     "rc_number": "RC1948210",
@@ -277,7 +303,7 @@ const inferenceRequest = {
 const result = await umcClient.compute.executeMeteredInference(inferenceRequest);`,
     output: `{
   "status": "completed",
-  "node": "NG-ABJ-EDGE-02 (Unified Multi Concept Compute Virtualizer)",
+  "node": "NG-ABJ-EDGE-02 (Unified Multiconcepts Compute Virtualizer)",
   "metering": {
     "prompt_tokens": 28,
     "completion_tokens": 312,
@@ -295,7 +321,8 @@ const result = await umcClient.compute.executeMeteredInference(inferenceRequest)
     endpoint: '/v1/orchestration/corporate-manifest',
     languageLabel: 'Corporate Manifest JSON',
     code: `{
-  "company": "UNIFIED MULTI CONCEPT LTD",
+  "company": "UNIFIED MULTICONCEPTS LTD",
+  "domain": "unifiedmulticonceptsltd.com",
   "cac_rc_number": "RC 6881592",
   "architecture": "non_custodial_software_orchestrator",
   "identity_and_open_banking": {
@@ -324,7 +351,8 @@ const result = await umcClient.compute.executeMeteredInference(inferenceRequest)
 }`,
     output: `{
   "status": "verified",
-  "entity": "UNIFIED MULTI CONCEPT LTD",
+  "entity": "UNIFIED MULTICONCEPTS LTD",
+  "domain": "unifiedmulticonceptsltd.com",
   "rc_number": "RC 6881592",
   "primary_settlement_gtb": "0766139326",
   "virtual_subaccounts_count": 4,
@@ -336,37 +364,37 @@ const result = await umcClient.compute.executeMeteredInference(inferenceRequest)
 export const GITHUB_DEPLOY_STEPS = [
   {
     step: 'Step 01',
-    title: 'Create Public Repository',
+    title: 'Register Corporate Domain',
     description:
-      'Create a GitHub repository (e.g. unified-multi-concept) under your GitHub account.',
+      'Register unifiedmulticonceptsltd.com and configure DNS MX records with Google Workspace or Zoho Mail for @unifiedmulticonceptsltd.com mailboxes.',
   },
   {
     step: 'Step 02',
-    title: 'Push Project & Workflow',
+    title: 'Host Website & Mail Console',
     description:
-      'Push this project (including .github/workflows/deploy.yml and vite.config.ts) to the main branch.',
+      'GitHub Actions compiles index.html (corporate site) and mail.html (email console) to https://adamu56.github.io/unified-multiconcepts-ltd/.',
   },
   {
     step: 'Step 03',
-    title: 'Select GitHub Actions Source',
+    title: 'Connect Custom Domain (Optional)',
     description:
-      'In GitHub → Settings → Pages, set Build and deployment Source to GitHub Actions.',
+      'Add a CNAME record pointing unifiedmulticonceptsltd.com to adamu56.github.io under Settings → Pages → Custom domain.',
   },
   {
     step: 'Step 04',
-    title: 'Live on *.github.io',
+    title: 'Verify SPF, DKIM & DMARC',
     description:
-      'The workflow builds dist/ and publishes your portal live on https://<username>.github.io/<repo>/.',
+      'Publish SPF, DKIM, and DMARC TXT records on unifiedmulticonceptsltd.com so partner banks accept corporate dispatches reliably.',
   },
 ];
 
 export const LEGAL_DOCUMENTS: Record<LegalDocument['id'], LegalDocument> = {
   privacy: {
     id: 'privacy',
-    title: 'Privacy & NDPR Data Protection Policy — UNIFIED MULTI CONCEPT LTD',
+    title: 'Privacy & NDPR Data Protection Policy — UNIFIED MULTICONCEPTS LTD',
     paragraphs: [
       {
-        text: 'UNIFIED MULTI CONCEPT LTD (RC 6881592) processes institutional and user telemetry in compliance with the Nigeria Data Protection Act (NDPA) and NDPR guidelines.',
+        text: 'UNIFIED MULTICONCEPTS LTD (RC 6881592) processes institutional and user telemetry in compliance with the Nigeria Data Protection Act (NDPA) and NDPR guidelines.',
       },
       {
         heading: '1. Consent-Driven Open Banking',
@@ -384,7 +412,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocument['id'], LegalDocument> = {
     paragraphs: [
       {
         heading: '1. Scope of Technology Services',
-        text: 'UNIFIED MULTI CONCEPT LTD provides cloud ERP software, metered AI compute virtualization, and payment orchestration middleware to verified institutions, schools, utilities, and businesses.',
+        text: 'UNIFIED MULTICONCEPTS LTD provides cloud ERP software, metered AI compute virtualization, and payment orchestration middleware to verified institutions, schools, utilities, and businesses.',
       },
       {
         heading: '2. Non-Custodial Financial Architecture',
@@ -398,7 +426,7 @@ export const LEGAL_DOCUMENTS: Record<LegalDocument['id'], LegalDocument> = {
     paragraphs: [
       {
         heading: '1. Core API Availability',
-        text: 'UNIFIED MULTI CONCEPT LTD commits to a 99.98% monthly uptime SLA across its AI Compute Gateway, Split-Settlement Webhook Router, and 774-LGA Digital School Operating System.',
+        text: 'UNIFIED MULTICONCEPTS LTD commits to a 99.98% monthly uptime SLA across its AI Compute Gateway, Split-Settlement Webhook Router, and 774-LGA Digital School Operating System.',
       },
       {
         heading: '2. Engineering Support Hubs',
