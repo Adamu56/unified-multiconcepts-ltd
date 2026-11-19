@@ -43,8 +43,8 @@ export default function Footer({ onOpenLegal }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#corporate-mail" className="hover:text-emerald-400 transition-colors">
-                  Corporate Mail Dispatch Console
+                <a href="./mail.html" className="hover:text-emerald-400 transition-colors">
+                  Corporate Mail Infrastructure (Separate Console)
                 </a>
               </li>
               <li>

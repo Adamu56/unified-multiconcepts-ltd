@@ -3,7 +3,6 @@ import { Check, Copy, ShieldCheck } from 'lucide-react';
 import {
   BANK_ACCOUNTS,
   CORPORATE_PROFILE,
-  GITHUB_DEPLOY_STEPS,
 } from '../data/corporateData';
 import { copyToClipboard } from '../utils/clipboard';
 
@@ -252,41 +251,6 @@ export default function ComplianceAndDeploySection() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-
-        {/* Row 3: Zero-Domain GitHub Pages Deployment Guide */}
-        <div
-          id="github-deploy"
-          className="rounded-2xl border border-slate-800 bg-[#0E1525] p-6 sm:p-8"
-        >
-          <div className="mb-6 max-w-3xl">
-            <div className="mb-1.5 font-mono text-xs font-semibold text-blue-400">
-              Zero-Cost Hosting Steps
-            </div>
-            <h3 className="text-xl font-bold text-white sm:text-2xl">
-              Deploy This Portal &amp; Mail Console on GitHub Pages (No Domain Needed)
-            </h3>
-            <p className="mt-2 text-sm text-slate-300">
-              GitHub Pages provides a free HTTPS URL (
-              <span className="font-mono text-emerald-400">
-                https://your-github-username.github.io/unified-multi-concept/
-              </span>
-              ) with zero domain registration fees.
-            </p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-4">
-            {GITHUB_DEPLOY_STEPS.map((item) => (
-              <div
-                key={item.step}
-                className="space-y-1.5 rounded-xl border border-slate-800 bg-[#080D18] p-4"
-              >
-                <div className="font-mono text-xs font-bold text-emerald-400">{item.step}</div>
-                <div className="text-sm font-bold text-white">{item.title}</div>
-                <p className="text-xs leading-relaxed text-slate-400">{item.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>

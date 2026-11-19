@@ -29,6 +29,14 @@ export default defineConfig(() => {
         },
       },
     ],
+    build: {
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          mail: path.resolve(__dirname, 'mail.html'),
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

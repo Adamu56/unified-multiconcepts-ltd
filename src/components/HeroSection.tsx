@@ -44,8 +44,6 @@ export default function HeroSection() {
           <span>Abuja HQ &amp; Potiskum Regional Ops</span>
           <span aria-hidden="true">·</span>
           <span>Non-Bank Software &amp; Infrastructure Vendor</span>
-          <span aria-hidden="true">·</span>
-          <span>Zero-Domain GitHub Pages Ready</span>
         </div>
 
         {/* Two-Column Hero Split */}
@@ -54,16 +52,15 @@ export default function HeroSection() {
           <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
             <div className="space-y-5">
               <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[3.1rem] lg:leading-[1.1] [text-wrap:balance]">
-                Corporate Mail Dispatch,{' '}
-                <span className="text-emerald-400">Software-Defined AI Compute</span> &amp;
-                774-LGA Infrastructure
+                Software-Defined <span className="text-emerald-400">AI Compute</span> &amp;
+                Grassroots Fintech Orchestration Across Nigeria&apos;s 774 LGAs
               </h1>
 
               <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
                 <strong className="text-white">{CORPORATE_PROFILE.legalName}</strong> engineers
                 modular enterprise operating systems, in-transit AI compute virtualization nodes,
-                automated payment orchestration middleware, and zero-domain institutional mail
-                dispatch tools for schools, utilities, and enterprises across Nigeria.
+                and automated payment orchestration middleware for schools, utilities, and
+                institutions across all 36 states and the FCT.
               </p>
 
               {/* Regulatory Classification Notice (Hairline Border, No Left Stripe) */}
@@ -82,17 +79,17 @@ export default function HeroSection() {
 
             <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
               <a
-                href="#corporate-mail"
+                href="#software-dev"
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-bold text-slate-950 hover:bg-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
               >
-                <span>Open Corporate Mail Console</span>
+                <span>Explore Software &amp; API Stack</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="#software-dev"
+                href="#compliance"
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-xl border border-slate-700 bg-[#0E1525] px-6 py-3.5 text-sm font-semibold text-slate-100 hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               >
-                Explore API &amp; Split Sandbox
+                Verify Corporate Credentials
               </a>
             </div>
           </div>

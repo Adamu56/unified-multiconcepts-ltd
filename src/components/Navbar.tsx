@@ -3,8 +3,8 @@ import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: '#solutions', label: 'Solutions' },
+  { href: '#lga-infrastructure', label: '774 LGAs' },
   { href: '#software-dev', label: 'API Sandbox' },
-  { href: '#corporate-mail', label: 'Mail Console' },
   { href: '#compliance', label: 'Compliance' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -42,10 +42,10 @@ export default function Navbar() {
         {/* Zone 3: Single Primary CTA + Mobile Toggle */}
         <div className="flex items-center gap-3 shrink-0">
           <a
-            href="#corporate-mail"
+            href="#software-dev"
             className="hidden sm:inline-flex items-center justify-center whitespace-nowrap shrink-0 rounded-xl bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300"
           >
-            Open Mail Console
+            API Sandbox
           </a>
 
           <button
@@ -77,11 +77,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#corporate-mail"
+            href="#software-dev"
             onClick={() => setMobileOpen(false)}
             className="mt-2 block rounded-xl bg-emerald-500 px-4 py-2.5 text-center text-sm font-semibold text-slate-950 hover:bg-emerald-400"
           >
-            Open Mail Console
+            API Sandbox
           </a>
         </nav>
       )}

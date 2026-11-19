@@ -1,23 +1,11 @@
-# UNIFIED MULTI CONCEPT LTD (RC 6881592) — Corporate Mail & Infrastructure Hub
+# UNIFIED MULTI CONCEPT LTD (RC 6881592)
 
-Enterprise software engineering, software-defined AI compute virtualization, interactive API & Flutterwave split-settlement sandbox, and corporate mail dispatch portal for **UNIFIED MULTI CONCEPT LTD (RC 6881592)**.
+Separated enterprise corporate website and standalone corporate mail infrastructure hosted on GitHub Pages.
 
-## Deploy to GitHub & GitHub Pages (No Custom Domain Required)
+## Separated Entry Points
+- **Corporate Website (`/` / `index.html`)**: AI Compute virtualization, 774-LGA infrastructure, Flutterwave PSA split simulator, Mono/Flutterwave API sandbox, KYB compliance center, and enterprise onboarding.
+- **Email Infrastructure Console (`/mail.html`)**: Standalone corporate email composer, CAC RC 6881592 sign-off builder, dispatch desk selector, and verified account reference.
 
-This project is pre-configured for GitHub Pages subpath hosting (`base: './'` in `vite.config.ts` and `.github/workflows/deploy.yml`).
-
-1. **Create a repository on GitHub** (e.g. `unified-multi-concept`).
-2. **Initialize Git and push to `main`**:
-   ```bash
-   git init -b main
-   git add .
-   git commit -m "Deploy UNIFIED MULTI CONCEPT LTD portal"
-   git remote add origin https://github.com/<your-username>/unified-multi-concept.git
-   git push -u origin main
-   ```
-3. **Enable GitHub Pages**:
-   - Open your repository **Settings → Pages**
-   - Under **Build and deployment → Source**, select **GitHub Actions**
-4. **Access your live URL**:
-   - Once the **Deploy to GitHub Pages** workflow finishes (~1 minute), your portal is live at:
-     `https://<your-username>.github.io/unified-multi-concept/`
+## Live Hosting
+- Corporate Website: `https://adamu56.github.io/unified-multi-concept/`
+- Corporate Email Infrastructure: `https://adamu56.github.io/unified-multi-concept/mail.html`
